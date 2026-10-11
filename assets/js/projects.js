@@ -1,7 +1,7 @@
 /* Yewon Works v14 — final publication content. */
 window.YW_PROJECTS = [
 {
- id:"new-business-strategy",number:"01",order:1,group:"professional",featured:true,title:"신사업 기회 발굴 및 평가",organization:"유한양행",category:"성장전략 / 리서치",role:"전략 리서치 및 보고서 구조화",period:"비공개",summary:"공개자료와 AI 보조 리서치로 시장 신호를 구조화하고 사업기회를 비교하는 평가 프레임을 설계했습니다.",decisionLine:"시장 신호를 근거 수준·비교 가능성·검증 조건으로 평가",competencies:["기회 구조화","공개자료 리서치","AI 보조 분석"],logo:"assets/images/logos/yuhan-corporation.png",logoTone:"light",visualMode:"pipeline",thumbnail:{label:"기회 선별",steps:["조사","구조화","선별","평가"]},
+ id:"new-business-strategy",number:"01",order:1,group:"professional",featured:true,title:"신사업 기회 발굴 및 평가",organization:"유한양행",category:"성장전략 / 리서치",role:"전략 리서치 및 보고서 구조화",period:"비공개",summary:"공개자료와 AI 보조 리서치로 시장 신호를 구조화하고 사업기회를 비교하는 평가 프레임을 설계했습니다.",decisionLine:"시장 신호를 근거 수준·비교 가능성·검증 조건으로 평가",competencies:["기회 구조화","공개자료 리서치","AI 보조 분석"],logo:"assets/images/logos/yuhan-corporation.svg",logoTone:"light",visualMode:"pipeline",thumbnail:{label:"기회 선별",steps:["조사","구조화","선별","평가"]},
  overview:{problem:"분산된 시장 신호를 같은 기준으로 비교하고, 추가 검증이 필요한 지점을 구분해야 했습니다.",direction:"공개 근거를 공통 구조로 정리한 뒤 근거 수준과 검증 가능성을 단계적으로 평가했습니다.",result:"공개자료 기반 기회 평가체계와 구조화된 리서치 보고서"},
  analysis:[
   {question:"서로 다른 시장 신호를 어떻게 비교할 것인가?",criteria:"수요 신호 · 고객 문제 · 사업 구조 · 근거 출처",finding:"공개자료를 공통 항목의 기회 지도로 구조화",implication:"분산된 정보를 비교 가능한 후보군으로 전환"},
@@ -13,7 +13,7 @@ window.YW_PROJECTS = [
  outcome:{items:[{label:"산출물",value:"기회 평가체계 · 공개 사례 비교 · 구조화된 리서치 보고서"},{label:"리서치 결과",value:"분산된 공개자료를 공통 항목으로 비교하는 기회 지도"},{label:"의사결정 체계",value:"근거 수준과 검증 조건을 연결한 단계형 평가안"}],contribution:["시장·경쟁 리서치 기준 설계","AI 보조 결과의 출처와 논리 검증","시장 신호와 검증 근거를 구분하는 보고서 구조화"]},disclosure:"공개본은 공개자료 기반 리서치 방법과 일반화한 평가체계만 제시합니다."
 },
 {
- id:"investment-feasibility",number:"02",order:2,group:"professional",featured:false,title:"투자 타당성 및 회수 리스크 분석",organization:"유한양행",category:"투자기획 / 재무분석",role:"재무 타당성 분석",period:"비공개",summary:"초기비용·운영비·수요 가정·현금흐름을 연결해 투자안의 경제성을 시나리오로 검토했습니다.",decisionLine:"단일 예상값 대신 변수 변화에 따른 회수 민감도를 비교",competencies:["재무 모델링","시나리오 분석","리스크 검토"],logo:"assets/images/logos/yuhan-corporation.png",logoTone:"light",visualMode:"scenario",
+ id:"investment-feasibility",number:"02",order:2,group:"professional",featured:false,title:"투자 타당성 및 회수 리스크 분석",organization:"유한양행",category:"투자기획 / 재무분석",role:"재무 타당성 분석",period:"비공개",summary:"초기비용·운영비·수요 가정·현금흐름을 연결해 투자안의 경제성을 시나리오로 검토했습니다.",decisionLine:"단일 예상값 대신 변수 변화에 따른 회수 민감도를 비교",competencies:["재무 모델링","시나리오 분석","리스크 검토"],logo:"assets/images/logos/yuhan-corporation.svg",logoTone:"light",visualMode:"scenario",
  overview:{problem:"단일 원가가 아니라 수요와 비용 조건이 달라질 때 경제성이 유지되는 범위를 판단해야 했습니다.",direction:"비용 구조, 수요 가정, 현금흐름 시점을 하나의 시나리오 모델로 연결했습니다.",result:"시나리오 기반 경제성 검토 모델과 판단 기준"},
  analysis:[
   {question:"경제성에 포함할 비용은 무엇인가?",criteria:"초기비용 · 운영비 · 필요 자원",finding:"일회성 비용과 반복 비용을 구분해 구조화",implication:"단가 중심 검토에서 전체 비용 구조로 범위 확대"},
@@ -25,7 +25,7 @@ window.YW_PROJECTS = [
  outcome:{items:[{label:"산출물",value:"비용·수요·현금흐름을 연결한 경제성 검토 모델"},{label:"의사결정 지원",value:"회수기간과 핵심 변수 변화를 반영한 민감도 비교"},{label:"검토 범위",value:"투자안 검토에 필요한 시나리오와 판단 기준 정리"}],contribution:["경제성 검토 모델 구성","회수기간과 핵심 변수의 민감도 비교","복수 가정을 공통 재무기준으로 구조화"]},disclosure:"공개본은 대상 사업을 특정하지 않고 경제성 분석 구조와 시나리오 방법론만 제시합니다."
 },
 {
- id:"business-performance-optimization",number:"03",order:3,group:"professional",featured:false,title:"제휴사업 정산·손익관리 체계 개선",organization:"유한양행",category:"성과관리 / 프로세스 혁신",role:"프로세스 설계 및 검증",period:"비공개",summary:"반복 계산 업무를 명시적 규칙과 단계별 검증으로 표준화하고 AI 보조 구현으로 계산 과정을 개선했습니다.",decisionLine:"AI 구현은 초안으로 활용하고 기준값 대조와 경계조건 검증으로 통제",competencies:["프로세스 설계","Excel 자동화","AI 검증"],logo:"assets/images/logos/yuhan-corporation.png",logoTone:"light",visualMode:"validation",
+ id:"business-performance-optimization",number:"03",order:3,group:"professional",featured:false,title:"제휴사업 정산·손익관리 체계 개선",organization:"유한양행",category:"성과관리 / 프로세스 혁신",role:"프로세스 설계 및 검증",period:"비공개",summary:"반복 계산 업무를 명시적 규칙과 단계별 검증으로 표준화하고 AI 보조 구현으로 계산 과정을 개선했습니다.",decisionLine:"AI 구현은 초안으로 활용하고 기준값 대조와 경계조건 검증으로 통제",competencies:["프로세스 설계","Excel 자동화","AI 검증"],logo:"assets/images/logos/yuhan-corporation.svg",logoTone:"light",visualMode:"validation",
  overview:{problem:"조건이 많은 반복 계산에서 기준의 일관성과 결과의 검증 가능성을 함께 확보해야 했습니다.",direction:"업무 기준 구조화 → AI 보조 구현 → 기준값 대조와 경계조건 검증 → 반복 단계 적용으로 개선했습니다.",result:"표준 계산 로직, 검증 체크리스트와 자동산출 템플릿"},
  analysis:[
   {question:"어떤 단계를 표준화할 것인가?",criteria:"입력 · 변환 · 계산 · 확인",finding:"반복이 크고 기준이 명확한 계산 단계를 식별",implication:"프로세스를 검증 가능한 단위로 분해"},
@@ -37,7 +37,7 @@ window.YW_PROJECTS = [
  outcome:{items:[{label:"산출물",value:"표준 계산 로직 · 검증 기준 · 자동산출 템플릿"},{label:"업무 적용",value:"검증을 통과한 반복 계산 단계에 적용"},{label:"검증 프로세스",value:"기준값 대조와 경계조건 확인을 포함한 재검증 절차 정립"}],contribution:["업무 기준의 계산 규칙 구조화","AI 보조 구현 결과의 기준값·경계조건 검증","대조 검증 후 반복 계산 단계에 적용"]},disclosure:"공개본은 규칙 설계와 검증 방법론을 중심으로 구성했습니다."
 },
 {
- id:"semiconductor-market-entry",number:"04",order:4,group:"academic",featured:true,title:"반도체 시장 진입 전략",organization:"다임리서치",category:"시장진입 / B2B 전략",role:"시장·고객·파트너 분석",period:"비공개",summary:"산업 수요와 기술 적용 맥락을 연결해 B2B 기회 우선순위와 시장진입 검토 프레임을 설계했습니다.",decisionLine:"시장기회 → 기술 적합성 → 고객 조건 → 진입 옵션",competencies:["산업 리서치","시장진입","B2B 기획"],logo:"assets/images/logos/daim-research.svg",logoTone:"dark",visualMode:"gates",thumbnail:{label:"시장진입 단계",steps:["시장","기술 적합성","고객","진입"]},
+ id:"semiconductor-market-entry",number:"04",order:4,group:"academic",featured:true,title:"반도체 시장 진입 전략",organization:"다임리서치",category:"시장진입 / B2B 전략",role:"시장·고객·파트너 분석",period:"비공개",summary:"산업 수요와 기술 적용 맥락을 연결해 B2B 기회 우선순위와 시장진입 검토 프레임을 설계했습니다.",decisionLine:"시장기회 → 기술 적합성 → 고객 조건 → 진입 옵션",competencies:["산업 리서치","시장진입","B2B 기획"],logo:"assets/images/logos/daim-research.svg",logoOnLight:"assets/images/logos/daim-research-on-light.svg",logoTone:"dark",visualMode:"gates",thumbnail:{label:"시장진입 단계",steps:["시장","기술 적합성","고객","진입"]},
  overview:{problem:"기술의 잠재력만으로는 고객의 도입조건과 시장기회의 우선순위를 판단하기 어려웠습니다.",direction:"시장 매력도, 기술 적용 맥락, 고객 준비도와 협력 가능성을 공통 기준으로 평가했습니다.",result:"B2B 기회 우선순위와 시장진입 검토 프레임"},
  analysis:[
   {question:"기술은 어떤 사용 맥락에서 가치를 만드는가?",criteria:"문제 적합성 · 유연성 · 적용 범위 · 도입조건",finding:"기술 가치는 적용 맥락과 고객 요구에 따라 달라짐",implication:"기술 특성과 시장 요구를 함께 평가"},

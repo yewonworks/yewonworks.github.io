@@ -105,10 +105,6 @@
   vertical-align: middle;
 }
 
-.choice-panel {
-  box-shadow: inset 0 3px 0 var(--sk-orange);
-}
-
 .featured-outcome__metric > div:first-child dd {
   color: var(--sk-red-ink);
 }
@@ -297,27 +293,29 @@ svg {
   display: grid;
   place-items: center;
   padding: clamp(20px, 2vw, 30px);
-  border-top: 3px solid var(--sk-yellow);
-  background:
-    linear-gradient(135deg, rgba(234, 0, 44, .045), transparent 65%),
-    var(--paper-2);
+  background: none;
 }
 
-.featured-card__visual--logo .organization-logo {
-  width: min(100%, 224px);
-  min-width: 0;
-  height: 76px;
-  padding: 14px 18px;
-  box-shadow: inset 0 2px 0 var(--sk-red);
-}
-
-.featured-card__visual--logo .organization-logo--wide-wordmark {
-  width: min(100%, 240px);
-}
-
-.featured-card__visual--logo .organization-logo img {
+.featured-logo {
+  display: block;
+  width: min(100%, 250px);
+  height: 72px;
   object-fit: contain;
   object-position: center;
+}
+
+/* Center the logo between the card number and the title: the logo cell starts under the
+   number column, offset by the "01" label width (26px) plus the grid gap (24px). */
+@media (min-width: 701px) {
+  .featured-card > * {
+    grid-row: 1;
+  }
+
+  .featured-card__visual--logo {
+    grid-column-start: 1;
+    padding-left: 50px;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 700px) {
@@ -325,8 +323,8 @@ svg {
     padding: 18px;
   }
 
-  .featured-card__visual--logo .organization-logo {
-    height: 68px;
+  .featured-logo {
+    height: 64px;
   }
 }
 
@@ -451,8 +449,6 @@ body[data-page="work"] .project-row__main > p:last-child {
 
 .v8-overview__logic article:last-child {
   border-right: 1px solid var(--line);
-  background: var(--sage-pale);
-  box-shadow: inset 0 3px 0 var(--sk-yellow);
 }
 
 .v8-overview__logic span,
@@ -536,11 +532,6 @@ body[data-page="work"] .project-row__main > p:last-child {
   font-size: 11px;
   line-height: 1.45;
   word-break: keep-all;
-}
-
-.decision-visual--orchestration .viz-step:nth-child(2),
-.decision-visual--orchestration .viz-step:nth-child(3) {
-  margin-left: 18px;
 }
 
 .decision-visual--validation figcaption {
@@ -740,13 +731,14 @@ body[data-project-detail] .analysis-step > div {
   gap: 18px 30px;
   margin-top: 34px;
   padding: 32px 34px;
-  background: var(--sage);
-  color: #fff;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(125deg, rgba(234, 0, 44, .09), transparent 58%),
+    var(--paper-2);
 }
 
 .choice-panel > span {
   margin: 0;
-  color: rgba(255, 255, 255, .72);
 }
 
 .choice-panel p {
@@ -758,7 +750,7 @@ body[data-project-detail] .analysis-step > div {
 
 .choice-panel small {
   grid-column: 2;
-  color: rgba(255, 255, 255, .76);
+  color: var(--muted);
   line-height: 1.65;
   word-break: keep-all;
 }
@@ -1065,6 +1057,10 @@ body[data-project-detail] .analysis-step > div {
   overflow-wrap: anywhere;
 }
 
+.contact-footnote {
+  font-family: var(--font-sans);
+}
+
 @media (max-width: 1180px) {
   .v8-overview__head {
     grid-template-columns: minmax(0, 1fr) minmax(300px, .82fr);
@@ -1295,11 +1291,6 @@ body[data-project-detail] .analysis-step > div {
   .viz-step small,
   .viz-branch small {
     word-break: normal;
-  }
-
-  .decision-visual--orchestration .viz-step:nth-child(2),
-  .decision-visual--orchestration .viz-step:nth-child(3) {
-    margin-left: 0;
   }
 
   .viz-branch {
