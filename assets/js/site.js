@@ -22,18 +22,13 @@
     return `<span class="organization-logo ${modifier} organization-logo--${project.logoTone || "light"}${style}"><img src="${project.logo}" alt="${project.organization} 공식 로고" loading="lazy"></span>`;
   }
 
-  function miniVisual(project) {
-    const visual = project.thumbnail || { label: "의사결정 흐름", steps: ["질문", "근거", "선택"] };
-    return `<div class="featured-diagram featured-diagram--${project.visualMode}" aria-hidden="true"><span class="featured-diagram__label mono">${visual.label}</span><div class="featured-diagram__track">${visual.steps.map((step,index)=>`<i><b class="mono">${String(index+1).padStart(2,"0")}</b><small>${step}</small></i>`).join("")}</div></div>`;
-  }
-
   function renderFeatured() {
     const root = $("[data-featured-projects]");
     if (!root) return;
     root.innerHTML = projects.filter(p => p.featured).map((p, index) => `
       <a class="featured-card reveal" href="project.html?id=${p.id}" aria-label="${p.title} 프로젝트 보기">
         <span class="featured-card__number mono">${String(index + 1).padStart(2, "0")}</span>
-        <div class="featured-card__visual">${miniVisual(p)}</div>
+        <div class="featured-card__visual featured-card__visual--logo">${logo(p, "organization-logo--featured")}</div>
         <div class="featured-card__content"><h3>${p.title}</h3><p>${p.summary}</p></div>
         <div class="featured-card__meta mono"><span>${p.organization}<br>${p.category.replace(" / ", "<br>")}</span><b aria-hidden="true">↗</b></div>
       </a>`).join("");
@@ -150,12 +145,12 @@
       <a class="project-hero__back mono" href="work.html">← 전체 프로젝트</a>
       <div class="v8-overview__head reveal"><div>${logo(project,"organization-logo--detail")}<p class="section-index mono">01 / 프로젝트 개요 · 프로젝트 ${project.number}</p><h1 id="project-title">${project.title}</h1><p class="v8-overview__summary">${project.summary}</p></div>${strategyVisual(project)}</div>
       <dl class="v8-facts reveal"><div><dt>기업</dt><dd>${project.organization}</dd></div><div><dt>기간</dt><dd>${project.period}</dd></div><div><dt>수행 역할</dt><dd>${project.role}</dd></div><div><dt>분야</dt><dd>${project.category}</dd></div></dl>
-      <div class="v8-overview__logic reveal"><article><span class="mono">핵심 문제</span><p>${project.overview.problem}</p></article><article><span class="mono">전략 방향</span><p>${project.overview.direction}</p></article><article><span class="mono">확인된 산출물</span><p>${project.overview.result}</p></article></div>
+      <div class="v8-overview__logic reveal"><article><span class="mono">핵심 문제</span><p>${project.overview.problem}</p></article><article><span class="mono">전략 방향</span><p>${project.overview.direction}</p></article><article><span class="mono">결과물</span><p>${project.overview.result}</p></article></div>
     </section>`;
   }
 
   function analysis(project) {
-    return `<section class="v8-section v8-analysis shell" aria-labelledby="analysis-title"><header><p class="section-index mono">02 / 핵심 분석</p><h2 id="analysis-title">근거가 의사결정으로<br>이어지는 과정.</h2><p>분석의 이유와 전략적 영향을 한 흐름에서 읽도록 연결했습니다.</p></header><div class="analysis-flow">${project.analysis.map((x,i)=>`
+    return `<section class="v8-section v8-analysis shell" aria-labelledby="analysis-title"><header><p class="section-index mono">02 / 핵심 분석</p><h2 id="analysis-title">Evidence moving<br>toward a decision.</h2><p>분석의 이유와 전략적 영향을 한 흐름에서 읽도록 연결했습니다.</p></header><div class="analysis-flow">${project.analysis.map((x,i)=>`
       <article class="analysis-step reveal"><span class="analysis-step__no mono">${String(i+1).padStart(2,"0")}</span><div><small>분석 질문</small><h3>${x.question}</h3></div><div><small>평가 기준</small><p>${x.criteria}</p></div><div><small>핵심 발견</small><p>${x.finding}</p></div><div class="analysis-step__impact"><small>전략적 시사점</small><p>${x.implication}</p></div></article>`).join("")}</div></section>`;
   }
 
@@ -183,14 +178,14 @@
 
   function decision(project) {
     const d = project.decision;
-    return `<section class="v8-section v8-decision shell" aria-labelledby="decision-title"><header><p class="section-index mono">03 / 전략적 판단</p><h2 id="decision-title">선택과<br>트레이드오프.</h2><p class="decision-criteria"><span class="mono">판단 기준</span>${d.criteria.join(" · ")}</p></header><div class="alternative-table reveal"><div class="alternative-table__head mono"><span>대안</span><span>강점</span><span>리스크 / 한계</span></div>${d.alternatives.map(a=>`<div><strong>${a.option}</strong><p>${a.strength}</p><p>${a.risk}</p></div>`).join("")}</div><div class="choice-panel reveal"><span class="mono">권고 방향</span><p>${d.choice}</p><small>${d.rationale}</small></div></section>`;
+    return `<section class="v8-section v8-decision shell" aria-labelledby="decision-title"><header><p class="section-index mono">03 / 전략적 판단</p><h2 id="decision-title">The choice and<br>its trade-offs.</h2><p class="decision-criteria"><span class="mono">판단 기준</span>${d.criteria.join(" · ")}</p></header><div class="alternative-table reveal"><div class="alternative-table__head mono"><span>대안</span><span>강점</span><span>리스크 / 한계</span></div>${d.alternatives.map(a=>`<div><strong>${a.option}</strong><p>${a.strength}</p><p>${a.risk}</p></div>`).join("")}</div><div class="choice-panel reveal"><span class="mono">권고 방향</span><p>${d.choice}</p><small>${d.rationale}</small></div></section>`;
   }
 
   function outcome(project) {
     const o = project.outcome;
     const items = o.items || [];
     const statusItems = items.map(item => `<article><span>${item.label}</span><p>${item.value}</p>${item.sourceUrl ? `<a class="outcome-source mono" href="${item.sourceUrl}" target="_blank" rel="noreferrer">${item.sourceLabel || "출처"} ↗</a>` : ""}</article>`).join("");
-    return `<section class="v8-section v8-outcome shell" aria-labelledby="outcome-title"><header><p class="section-index mono">04 / 주요 결과 및 기여</p><h2 id="outcome-title">산출물과<br>직접 기여.</h2></header><div class="outcome-status outcome-status--${items.length} reveal" style="--outcome-count:${Math.min(items.length, 4)}">${statusItems}</div><div class="contribution-panel reveal"><span class="mono">직접 기여</span><ol>${o.contribution.map((x,i)=>`<li><i>${String(i+1).padStart(2,"0")}</i><p>${x}</p></li>`).join("")}</ol></div></section>`;
+    return `<section class="v8-section v8-outcome shell" aria-labelledby="outcome-title"><header><p class="section-index mono">04 / 주요 결과 및 기여</p><h2 id="outcome-title">What was delivered.<br>What I owned.</h2></header><div class="outcome-status outcome-status--${items.length} reveal" style="--outcome-count:${Math.min(items.length, 4)}">${statusItems}</div><div class="contribution-panel reveal"><span class="mono">직접 기여</span><ol>${o.contribution.map((x,i)=>`<li><i>${String(i+1).padStart(2,"0")}</i><p>${x}</p></li>`).join("")}</ol></div></section>`;
   }
 
   function renderProjectDetail() {
