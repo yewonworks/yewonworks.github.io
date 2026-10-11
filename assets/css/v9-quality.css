@@ -36,10 +36,134 @@
   --paper-2: var(--surface);
   --muted: var(--stone);
   --sage-pale: rgba(89, 109, 99, .08);
+  --sk-red: #ea002c;
+  --sk-orange: #f47725;
+  --sk-red-ink: #b40022;
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
   --font-display: "Manrope", "Pretendard Variable", Pretendard, "Noto Sans KR", sans-serif;
   --font-mono: "IBM Plex Mono", "Pretendard Variable", "Noto Sans KR", monospace;
   --mono: var(--font-mono);
+}
+
+/* v15: restrained SK-inspired accents. Core Yewon Works surfaces and sage remain unchanged. */
+::selection {
+  background: var(--sk-red);
+  color: #fff;
+}
+
+:focus-visible {
+  outline-color: var(--sk-red);
+}
+
+.brand-mark {
+  background: var(--sk-red);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.site-nav a[aria-current="page"]::after {
+  height: 2px;
+  background: var(--sk-red);
+}
+
+.text-link:hover,
+.site-footer a:hover {
+  color: var(--sk-red-ink);
+}
+
+.circle-link {
+  background: var(--sk-red);
+}
+
+.circle-link:hover {
+  background: #c90028;
+}
+
+.featured-card__number,
+.project-row__no,
+.analysis-step__no {
+  padding-left: 8px;
+  border-left: 3px solid var(--sk-red);
+}
+
+.page-label,
+.section-index {
+  position: relative;
+}
+
+.page-label::before,
+.section-index::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  margin-right: 8px;
+  background: var(--sk-red);
+  vertical-align: middle;
+}
+
+.choice-panel {
+  box-shadow: inset 0 3px 0 var(--sk-orange);
+}
+
+.featured-outcome__metric > div:first-child dd {
+  color: var(--sk-red-ink);
+}
+
+.featured-outcome__cta {
+  border-color: var(--sk-red);
+}
+
+.featured-outcome__cta--primary {
+  background: var(--sk-red);
+}
+
+.featured-outcome__cta--primary:hover {
+  background: #c90028;
+}
+
+.featured-outcome__cta--secondary {
+  color: var(--sk-red-ink);
+}
+
+.featured-outcome__cta--secondary:hover {
+  background: rgba(234, 0, 44, .06);
+}
+
+.featured-outcome__cta:focus-visible {
+  outline-color: rgba(234, 0, 44, .38);
+}
+
+.status-dot {
+  background: var(--sk-orange);
+}
+
+body[data-page="about"] .education-details dd strong,
+body[data-page="about"] .education-details dd span {
+  display: block;
+}
+
+body[data-page="about"] .education-details dd strong {
+  font-weight: 650;
+}
+
+body[data-page="about"] .education-details dd span {
+  margin-top: 4px;
+  color: var(--stone);
+}
+
+.featured-card__content h3,
+.project-row h3,
+.v8-overview h1,
+.project-next a {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.dark-page .site-nav a[aria-current="page"] {
+  color: var(--canvas);
 }
 
 html {
@@ -1414,4 +1538,33 @@ body[data-project-detail] .analysis-step > div {
   .contact-row > span:first-child {
     grid-column: 1 / -1;
   }
+}
+
+/* Keep the launch module aligned with the v15 accent system after its component rules. */
+.featured-outcome__metric > div:first-child dd {
+  color: var(--sk-red-ink);
+}
+
+.featured-outcome__cta {
+  border-color: var(--sk-red);
+}
+
+.featured-outcome__cta--primary {
+  background: var(--sk-red);
+}
+
+.featured-outcome__cta--primary:hover {
+  background: #c90028;
+}
+
+.featured-outcome__cta--secondary {
+  color: var(--sk-red-ink);
+}
+
+.featured-outcome__cta--secondary:hover {
+  background: rgba(234, 0, 44, .06);
+}
+
+.featured-outcome__cta:focus-visible {
+  outline-color: rgba(234, 0, 44, .38);
 }
