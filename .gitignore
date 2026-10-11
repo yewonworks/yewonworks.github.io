@@ -1,0 +1,27 @@
+# Internal working materials
+/project_outputs/
+/project_status/
+/website_pipeline/
+
+# Review documents and backups
+/FINAL_CONFIDENTIALITY_REVIEW.md
+/PUBLIC_FILES.md
+/CHANGELOG.md
+*.zip
+*.bak
+*.tmp
+
+# Original user-provided source assets
+/포폴용 프로필*
+/삼쩜삼_서비스화면.png*
+
+# Non-public duplicate assets
+/assets/images/README.md
+/assets/images/projects/README.md
+/assets/images/logos/qanda.png
+/assets/images/logos/samjjeom3.png
+/assets/images/logos/samjjeom3-bi-wordmark.webp
+
+# Local OS files
+.DS_Store
+Thumbs.db
